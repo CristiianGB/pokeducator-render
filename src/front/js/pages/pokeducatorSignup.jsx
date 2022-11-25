@@ -17,7 +17,7 @@ const PokeducatorSignup = (props) => {
   // hacer signup en actions y llamar a actions desde aqui
   const handleSignup = async () => {
     const resp = await fetch(
-      "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/signup",
+      "https://sample-service-name-hh15.onrender.com/api/signup",
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

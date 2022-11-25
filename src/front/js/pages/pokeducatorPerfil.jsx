@@ -122,7 +122,7 @@ const PokeducatorPerfil = () => {
     // let url = document.getElementById("modalFoto");
     let url = picProfile;
     const resp = await fetch(
-      "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/updateProfilePicture",
+      "https://sample-service-name-hh15.onrender.com/api/updateProfilePicture",
       {
         method: "PUT",
         headers: {

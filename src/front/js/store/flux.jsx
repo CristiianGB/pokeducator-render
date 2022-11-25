@@ -27,7 +27,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const store = getStore();
 
         const resp = fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/login/" +
+          "https://sample-service-name-hh15.onrender.com/api/login/" +
             username +
             "/" +
             password
@@ -46,7 +46,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       votes: async () => {
         const store = getStore();
         const resp = fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/votes"
+          "https://sample-service-name-hh15.onrender.com/api/votes"
         )
           .then((resp) => {
             return resp.json();
@@ -61,16 +61,13 @@ const getState = ({ getStore, getActions, setStore }) => {
       getProfile: () => {
         const token = localStorage.token;
         console.log(token);
-        fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/protected",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Bearer " + localStorage.token,
-            },
-          }
-        )
+        fetch("https://sample-service-name-hh15.onrender.com/api/protected", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.token,
+          },
+        })
           .then((resp) => {
             return resp.json();
           })
@@ -79,16 +76,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
             return setStore({ user: data });
           });
-        fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/lastvotes",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: "Bearer " + localStorage.token,
-            },
-          }
-        )
+        fetch("https://sample-service-name-hh15.onrender.com/api/lastvotes", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + localStorage.token,
+          },
+        })
           .then((resp) => {
             return resp.json();
           })
@@ -262,7 +256,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
 
           const resp = fetch(
-            "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/createPokemon",
+            "https://sample-service-name-hh15.onrender.com/api/createPokemon",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -319,7 +313,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
                 .finally(() => {
                   fetch(
-                    "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/createItem",
+                    "https://sample-service-name-hh15.onrender.com/api/createItem",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -338,9 +332,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
 
       saveDbonStore: () => {
-        fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/store"
-        )
+        fetch("https://sample-service-name-hh15.onrender.com/api/store")
           .then((response) => response.json())
           .then((store) => {
             store.pokemons.map((poke) => {
@@ -370,10 +362,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
       },
       addAll: () => {
-        fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/storeid/" +
-            1
-        )
+        fetch("https://sample-service-name-hh15.onrender.com/api/storeid/" + 1)
           .then((response) => response.json())
           .then((store) => {
             console.log(store);
@@ -392,7 +381,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       FindOnePokemon: (pokemon_id) => {
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/allmovabi/" +
+          "https://sample-service-name-hh15.onrender.com/api/allmovabi/" +
             pokemon_id
         )
           .then((response) => response.json())
@@ -408,7 +397,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
       addequipofus: (pokemon_fusion_id, num) => {
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/addequipofus",
+          "https://sample-service-name-hh15.onrender.com/api/addequipofus",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -421,23 +410,20 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
       },
       addequipo: (pokemon_id, num) => {
-        fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/addequipo",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              user_id: getStore().user_id,
-              pokemon_id: pokemon_id,
-              num: num,
-            }),
-          }
-        );
+        fetch("https://sample-service-name-hh15.onrender.com/api/addequipo", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            user_id: getStore().user_id,
+            pokemon_id: pokemon_id,
+            num: num,
+          }),
+        });
       },
 
       FindOneFusion: (pokemon_id) => {
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/allmovabifus/" +
+          "https://sample-service-name-hh15.onrender.com/api/allmovabifus/" +
             pokemon_id
         )
           .then((response) => response.json())
@@ -453,8 +439,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       FindOneItem: (item_id) => {
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/item/" +
-            item_id
+          "https://sample-service-name-hh15.onrender.com/api/item/" + item_id
         )
           .then((response) => response.json())
           .then((item) => {
@@ -463,8 +448,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       FindOneMove: (move_id) => {
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/move/" +
-            move_id
+          "https://sample-service-name-hh15.onrender.com/api/move/" + move_id
         )
           .then((response) => response.json())
           .then((move) => {
@@ -481,10 +465,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       idStorage: (id) => {
         setStore({ user_id: id });
-        fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/storeid/" +
-            id
-        )
+        fetch("https://sample-service-name-hh15.onrender.com/api/storeid/" + id)
           .then((response) => response.json())
           .then((store) => {
             let votes = [];
@@ -504,7 +485,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const vote = getStore().votes;
         let id = getStore().user_id;
         const resp = await fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/addvote",
+          "https://sample-service-name-hh15.onrender.com/api/addvote",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -524,7 +505,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         let user_id = getStore().user_id;
 
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/deletevote/" +
+          "https://sample-service-name-hh15.onrender.com/api/deletevote/" +
             pokemon_id +
             "/" +
             user_id
@@ -537,7 +518,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       deletefavorite: async (pokemon_id) => {
         let user_id = getStore().user_id;
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/deletefavorite/" +
+          "https://sample-service-name-hh15.onrender.com/api/deletefavorite/" +
             pokemon_id +
             "/" +
             user_id
@@ -552,7 +533,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         const favorite = getStore().favorites;
         let id = getStore().user_id;
         const resp = await fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/addfavorite",
+          "https://sample-service-name-hh15.onrender.com/api/addfavorite",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -570,7 +551,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       },
       FindOneAbility: (ability_id) => {
         fetch(
-          "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/ability/" +
+          "https://sample-service-name-hh15.onrender.com/api/ability/" +
             ability_id
         )
           .then((response) => response.json())
@@ -645,7 +626,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             });
           setTimeout(() => {
             fetch(
-              "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/createMove",
+              "https://sample-service-name-hh15.onrender.com/api/createMove",
               {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -690,7 +671,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
                 .finally(() => {
                   fetch(
-                    "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/createNature",
+                    "https://sample-service-name-hh15.onrender.com/api/createNature",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -736,7 +717,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 })
                 .finally(() => {
                   fetch(
-                    "https://3001-cristiiangb-pokeducator-9t75iflbwaf.ws-eu77.gitpod.io/api/createAbility",
+                    "https://sample-service-name-hh15.onrender.com/api/createAbility",
                     {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
