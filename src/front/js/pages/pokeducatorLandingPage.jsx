@@ -127,15 +127,7 @@ function PokeducatorLandingPage() {
                         </a>
                       </div>
                       )
-                  
                     ))}
-                   { /*<div className="col-sm perfilPadre card cardTeam text-center cardPerfil">
-                      <img
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png"
-                        alt=""
-                        className="fotoPerfilEquipos"
-                      />
-                    </div>*/}
                   </div>
                 ) : (
                   ""

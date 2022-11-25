@@ -175,7 +175,7 @@ const PokeducatorFusionInfo = () => {
                     <a
                       href={
                         params.theid > 1
-                          ? `/fusioninfo/${parseInt(params.theid - 1)}`
+                          ? `/fusion/${parseInt(params.theid - 1)}`
                           : ""
                       }
                     >
@@ -191,7 +191,7 @@ const PokeducatorFusionInfo = () => {
                     <a
                       href={
                         params.theid < store.pokemon_fusion_data.length
-                          ? `/fusioninfo/${parseInt(params.theid) + 1}`
+                          ? `/fusion/${parseInt(params.theid) + 1}`
                           : ""
                       }
                     >
