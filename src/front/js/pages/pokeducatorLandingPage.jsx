@@ -46,7 +46,7 @@ function PokeducatorLandingPage() {
           <div className="col-md-4 divPadre2">
             <div className="image-box1 divFotoPodio">
               {store.votes_pokemons[1] ? (
-                <a href={`/fusioninfo/${store.votes_pokemons[1]?.pokemon_id}`}>
+                <a href={`/fusion/${store.votes_pokemons[1]?.pokemon_id}`}>
                   <img
                     className="card-img-top imagenPodio3 img-fluid"
                     src={store.votes_pokemons[1]?.img}
@@ -65,7 +65,7 @@ function PokeducatorLandingPage() {
           <div className="col-md-4 divPadre1 ">
             <div className="image-box2 divFotoPodio1">
               {store.votes_pokemons[0] ? (
-                <a href={`/fusioninfo/${store.votes_pokemons[0]?.pokemon_id}`}>
+                <a href={`/fusion/${store.votes_pokemons[0]?.pokemon_id}`}>
                   <img
                     className="card-img-top imagenPodio3 img-fluid"
                     src={store.votes_pokemons[0]?.img}
@@ -83,7 +83,7 @@ function PokeducatorLandingPage() {
           <div className="col-md-4 divPadre3">
             <div className="image-box3 divFotoPodio3">
               {store.votes_pokemons[2] ? (
-                <a href={`/fusioninfo/${store.votes_pokemons[2]?.pokemon_id}`}>
+                <a href={`/fusion/${store.votes_pokemons[2]?.pokemon_id}`}>
                   <img
                     className="card-img-top imagenPodio3 img-fluid"
                     src={store.votes_pokemons[2]?.img}
