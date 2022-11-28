@@ -17,17 +17,15 @@
   padding: 15px 15px 15px 35px;
   width: 100%;
 }
-
-
 .input-icon {
   color: #4158b3;
   position: absolute;
-  width: 20px;
-  height: 20px;
-  left: 12px;
+  width: 23px;
+  height: 51px;
+  margin-right: 12px;
   top: 50%;
-  transform: translateY(-50%);
-  transition: color 0.4s ;
+  transform: translateY(-80%);
+  transition: color 0.4s;
 }
 .input-icon:hover{
   color: #2c4196;

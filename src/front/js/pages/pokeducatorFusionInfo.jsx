@@ -298,7 +298,7 @@ const PokeducatorFusionInfo = () => {
                             <p className="fw-bold fs-5 text-white">Altura</p>
                             <p className="fw-bold">
                               {pesoKilos(
-                                store.single_fusion_data.pokemon.weight
+                                store.single_fusion_data.pokemon.height
                               )}{" "}
                               Kg
                             </p>
@@ -307,7 +307,7 @@ const PokeducatorFusionInfo = () => {
                             <p className="fw-bold fs-5 text-white">Peso</p>
                             <p className="fw-bold">
                               {alturaMetros(
-                                store.single_fusion_data.pokemon.height
+                                store.single_fusion_data.pokemon.weight
                               )}{" "}
                               m
                             </p>

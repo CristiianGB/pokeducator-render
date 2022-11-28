@@ -3,6 +3,9 @@ import medalla1 from "../../assets/img/medalla1.png";
 import medalla2 from "../../assets/img/medalla2.png";
 import medalla3 from "../../assets/img/medalla3.png";
 import fusion from "../../assets/img/fusion.png";
+import votados from "../../assets/img/+Votados.png"
+import equipos from "../../assets/img/Equipos Pokémon.png"
+
 import { Context } from "../store/appContext.jsx";
 
 function PokeducatorLandingPage() {
@@ -42,6 +45,7 @@ function PokeducatorLandingPage() {
         </div>
       </div>
       <div className="fondoBlanco">
+        <img className="votados" src={votados} alt="Fusiones + votadas" />
         <div className="row margin">
           <div className="col-md-4 divPadre2">
             <div className="image-box1 divFotoPodio">
@@ -99,8 +103,8 @@ function PokeducatorLandingPage() {
             </div>
           </div>
         </div>
-
-        <div className="equipos">
+        <img className="equiposPokemon" src={equipos} alt="Equipos mas votados" />
+        <div className="equipos mt-2">
           {store.teams
             ? store.teams.map((team) =>
                 team.length > 0 ? (

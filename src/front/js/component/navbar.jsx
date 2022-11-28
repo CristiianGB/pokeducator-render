@@ -58,8 +58,9 @@ export const Navbar = () => {
                       Fusiones Pokémon
                     </Link>
                   </li>
-                  </ul>
-              ) : null}</li>
+                </ul>
+              ) : null}
+            </li>
             <li className="nav-item">
               <a className="nav-link" href="/habilidades">
                 Habilidades
@@ -141,13 +142,14 @@ export const Navbar = () => {
           {/* <!-- Avatar --> */}
           {localStorage.token ? (
             <div className="dropdown ms-2">
-              <a
-                className="dropdown-toggle d-flex align-items-center"
-                href="#"
+              <button
                 id="navbarDropdownMenuAvatar"
                 role="button"
                 data-mdb-toggle="dropdown"
                 aria-expanded="false"
+                className="btn dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
               >
                 <img
                   src="https://www.teleadhesivo.com/es/img/pokgo03-png/folder/products-detalle-png/pegatinas-coches-motos-poke-ball---pokemon.png" //imagen perfil
@@ -156,7 +158,8 @@ export const Navbar = () => {
                   alt="Black and White Portrait of a Man"
                   loading="lazy"
                 />
-              </a>
+              </button>
+
               <ul
                 className="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdownMenuAvatar"

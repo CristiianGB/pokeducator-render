@@ -15,7 +15,14 @@
   padding: 5px;
  
 }
-
+.votados, .equiposPokemon{
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+}
+.equiposPokemon{
+  margin-top: 40px;
+}
 
 
 .imagenPodio,
@@ -108,9 +115,6 @@
   );
 }
 
-.equipos{
-  margin-top:150px;
-}
 .teamRow{
   margin-top: 25px;
   margin-bottom: 25px;

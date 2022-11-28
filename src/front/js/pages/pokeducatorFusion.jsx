@@ -74,6 +74,7 @@ const PokeducatorFusion = () => {
   let natureFus;
   let typesFus = [];
 
+  
   function PokeFus() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 
@@ -461,6 +462,17 @@ const PokeducatorFusion = () => {
   setTimeout(() => {
     setLoad(false);
   }, time[randomtime]);
+
+  const alturaMetros = (altura) => {
+    let height_obtained = parseFloat(altura) * 0.1;
+    return height_obtained.toFixed(2);
+  };
+
+  const pesoKilos = (peso) => {
+    let weight_obtained = parseFloat(peso) * 0.1;
+    return weight_obtained.toFixed(2);
+  };
+
   return (
     <>
       {load ? (
@@ -509,10 +521,12 @@ const PokeducatorFusion = () => {
                   <p class="text--small">Tipo</p>
                 </div>
                 <div class=" col-md-3">
-                  43<p class="text--small">Peso</p>
+                  {pesoKilos(pokemon3?.weight)}
+                  <p class="text--small">Peso (Kg)</p>
                 </div>
                 <div class=" col-md-3">
-                  4<p class="text--small">Altura</p>
+                  {alturaMetros(pokemon3?.height)}
+                  <p class="text--small">Altura (m)</p>
                 </div>
               </div>
               <div className="row d-flex">
@@ -526,8 +540,8 @@ const PokeducatorFusion = () => {
                           </thead>
                           <tbody>
                             {pokemon3?.stats?.map((objeto) => (
-                              <tr className="d-flex text-center align-items-center">
-                                <td className="col-5 ">
+                              <tr className="trFusion d-flex text-center align-items-center">
+                                <td className="tdFusion col-5 ">
                                   {objeto.name == "atk"
                                     ? "Ataque"
                                     : objeto.name == "defens"
@@ -542,7 +556,7 @@ const PokeducatorFusion = () => {
                                     ? "Velocidad"
                                     : ""}
                                 </td>
-                                <td className="col-5 mt-2">
+                                <td className="tdFusion col-5 mt-2">
                                   <div className="progress">
                                     <div
                                       className="progress-bar"
@@ -553,7 +567,7 @@ const PokeducatorFusion = () => {
                                     ></div>
                                   </div>
                                 </td>
-                                <td className="col-2 fs-6">
+                                <td className="tdFusion col-2">
                                   {objeto.base_stat}
                                 </td>
                               </tr>
@@ -566,17 +580,16 @@ const PokeducatorFusion = () => {
                     ""
                   )}
                 </div>
-
                 <div className="text-center col-md-6 float-end marginFusion">
                   <div class="row my-3 rowFusion">
-                    <div className="col-12">
+                    <div className="moveName col-12">
                       {mov31?.name}{" "}
                       {tipos
                         .filter((a) => mov31?.type.includes(a.tipo))
                         .map((tipos) => {
                           return (
                             <img
-                              className="tipoImg mx-1 float-end"
+                              className="moveTypeFusion tipoImg mx-1 float-end"
                               src={tipos.foto}
                               alt="foto de tipo"
                             />
@@ -585,14 +598,14 @@ const PokeducatorFusion = () => {
                     </div>
                   </div>
                   <div class="row my-3 rowFusion">
-                    <div className="col-12">
+                    <div className="moveName col-12">
                       {mov32?.name}{" "}
                       {tipos
                         .filter((a) => mov31?.type.includes(a.tipo))
                         .map((tipos) => {
                           return (
                             <img
-                              className="tipoImg mx-1 float-end"
+                              className="moveTypeFusion tipoImg mx-1 float-end"
                               src={tipos.foto}
                               alt="foto de tipo"
                             />
@@ -601,14 +614,14 @@ const PokeducatorFusion = () => {
                     </div>
                   </div>
                   <div class="row my-3 rowFusion">
-                    <div className="col-12">
+                    <div className="moveName col-12">
                       {mov33?.name}{" "}
                       {tipos
                         .filter((a) => mov31?.type.includes(a.tipo))
                         .map((tipos) => {
                           return (
                             <img
-                              className="tipoImg mx-1 float-end"
+                              className="moveTypeFusion tipoImg mx-1 float-end"
                               src={tipos.foto}
                               alt="foto de tipo"
                             />
@@ -617,14 +630,14 @@ const PokeducatorFusion = () => {
                     </div>
                   </div>
                   <div class="row my-3 rowFusion">
-                    <div className="col-12">
+                    <div className="moveName col-12">
                       {mov34?.name}{" "}
                       {tipos
                         .filter((a) => mov31?.type.includes(a.tipo))
                         .map((tipos) => {
                           return (
                             <img
-                              className="tipoImg mx-1 float-end"
+                              className="moveTypeFusion tipoImg mx-1 float-end"
                               src={tipos.foto}
                               alt="foto de tipo"
                             />
@@ -722,7 +735,7 @@ const PokeducatorFusion = () => {
                                       ></div>
                                     </div>
                                   </td>
-                                  <td className="col-3 fs-6">
+                                  <td className="col-3">
                                     {objeto.base_stat}
                                   </td>
                                 </tr>
@@ -931,7 +944,7 @@ const PokeducatorFusion = () => {
                                       ></div>
                                     </div>
                                   </td>
-                                  <td className="col-3 fs-6">
+                                  <td className="col-3">
                                     {objeto.base_stat}
                                   </td>
                                 </tr>
